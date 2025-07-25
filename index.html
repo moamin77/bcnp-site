@@ -5,48 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BCNP – Bitcoin Communication Network Protocol</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    ::selection { background-color: #f97316; color: black; }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans scroll-smooth">
 
-  <header class="text-center py-16 px-4">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-orange-400">BCNP</h1>
-    <p class="mt-4 text-lg md:text-xl text-gray-300">Bitcoin Communication Network Protocol</p>
+  <!-- Hero Section -->
+  <header class="text-center py-20 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+    <h1 class="text-5xl md:text-7xl font-extrabold text-orange-400 tracking-tight">BCNP</h1>
+    <p class="mt-4 text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+      Bitcoin Communication Network Protocol
+    </p>
+    <p class="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+      A post-IP data network architecture rooted in the principles of Bitcoin and Lightning. BCNP breaks free from IP, DNS, and NAT, replacing them with clean, prefix-based identity and local-first communication.
+    </p>
   </header>
 
-  <main class="max-w-3xl mx-auto px-6 space-y-12 text-gray-200">
-    
-    <section>
-      <h2 class="text-2xl font-semibold text-white">What is BCNP?</h2>
-      <p class="mt-2">
-        BCNP is a working prototype of a post-IP data networking layer. Modeled after ISO CLNP and inspired by Bitcoin’s architecture, it challenges legacy assumptions of DNS, NAT, and centralized routing.
-      </p>
-    </section>
+  <!-- What is BCNP -->
+  <section class="max-w-4xl mx-auto px-6 py-16 space-y-6 text-gray-200">
+    <h2 class="text-3xl font-bold text-white">What is BCNP?</h2>
+    <p>
+      BCNP is a protocol that enables peer communication without relying on the legacy IP stack. Each device constructs its address using a gateway-assigned prefix and its MAC address, resulting in 20-byte NSAP-style identifiers. No IP. No ports. No DNS.
+    </p>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold text-white">Why Now?</h2>
-      <p class="mt-2">
-        TCP/IP was never designed with privacy, sovereignty, or decentralization in mind. In a world reshaped by Bitcoin and Lightning, the foundation of how devices connect needs a similar rethink.
-      </p>
-    </section>
+  <!-- Why Now -->
+  <section class="max-w-4xl mx-auto px-6 py-16 bg-gray-900 space-y-6 text-gray-100">
+    <h2 class="text-3xl font-bold text-white">Why Now?</h2>
+    <p>
+      TCP/IP was never built for decentralization, privacy, or sovereignty. In the age of Bitcoin, these are no longer optional — they are foundational. BCNP rethinks communication at the data layer, the same way Bitcoin rethought money.
+    </p>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold text-white">How it Works</h2>
-      <p class="mt-2">
-        Devices construct their addresses from gateway-assigned prefixes and their MAC address, forming 20-byte NSAP-style IDs. BCNP eliminates IP addressing and replaces it with clean, prefix-based, link-layer communication.
-      </p>
-    </section>
+  <!-- How it Works -->
+  <section class="max-w-4xl mx-auto px-6 py-16 space-y-6 text-gray-200">
+    <h2 class="text-3xl font-bold text-white">How it Works</h2>
+    <p>
+      Gateways assign prefixes to clients via an ES-IS-like Hello protocol. Clients form their BCNP address by combining the prefix with their MAC address. Frames are sent directly over Ethernet or encapsulated over tunnels across networks — all without relying on IP.
+    </p>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold text-white">Get Involved</h2>
-      <ul class="list-disc list-inside mt-2 space-y-1">
-        <li>Read the code <a href="https://github.com/moamin77/bcnp-site" class="text-orange-400 underline">on GitHub</a></li>
-        <li>Follow updates and demos</li>
-        <li>Reach out to collaborate</li>
-      </ul>
-    </section>
-    
-  </main>
+  <!-- Global Tunnel Map -->
+  <section class="max-w-5xl mx-auto px-6 py-20 bg-gray-950 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">Global Tunnel Demo</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+      Two closed BCNP networks — one in the U.S., one in Asia — exchange data over a tunnel that spans the world. No IP addresses involved. Just raw frames wrapped, routed, and delivered using BCNP.
+    </p>
+    <div class="border border-gray-700 rounded-xl p-4 bg-black">
+      <!-- Placeholder for future image or map -->
+      <p class="text-orange-400">[🌐 World map demo coming soon]</p>
+    </div>
+  </section>
 
+  <!-- Get Involved -->
+  <section class="max-w-4xl mx-auto px-6 py-20 space-y-6 text-gray-200">
+    <h2 class="text-3xl font-bold text-white">Get Involved</h2>
+    <ul class="list-disc list-inside space-y-2 text-lg">
+      <li>Follow progress on <a href="https://github.com/moamin77/bcnp-site" class="text-orange-400 underline">GitHub</a></li>
+      <li>Read the upcoming spec and technical design</li>
+      <li>Reach out for testing, collaboration, or running a gateway node</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
   <footer class="text-center text-sm text-gray-500 mt-20 mb-10">
     &copy; 2025 BCNP Project. Built with intention.
   </footer>
