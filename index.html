@@ -6,11 +6,30 @@
   <title>BCNP - Bitcoin Communication Network Protocol</title>
   <link rel="icon" type="image/png" href="./favicon.png?v=2" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
   <style>
     ::selection { background-color: #f97316; color: black; }
   </style>
 </head>
-<body class="bg-black text-white font-sans scroll-smooth">
+<body class="bg-white text-black dark:bg-black dark:text-white font-sans">
+
+  <!-- Light/Dark Toggle Button -->
+  <div class="absolute top-6 right-6 z-50 hidden sm:block">
+    <button id="toggleMode" class="bg-gray-800 text-white dark:bg-white dark:text-black px-3 py-1 rounded-md text-sm shadow-md">
+      Toggle Mode
+    </button>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggleMode');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
 
   <!-- Sticky Logo Bar -->
   <div class="absolute top-6 left-6 z-50">
@@ -18,7 +37,7 @@
   </div>
 
   <!-- Top Left Navigation -->
-  <nav class="absolute top-6 left-40 z-50 space-x-4 text-sm text-orange-300 font-medium hidden sm:inline">
+  <nav class="absolute top-6 left-40 z-50 space-x-4 text-sm text-orange-500 font-medium hidden sm:inline">
     <a href="#what" class="hover:underline">What is BCNP</a>
     <a href="#why" class="hover:underline">Why Now</a>
     <a href="#vision" class="hover:underline">Vision</a>
